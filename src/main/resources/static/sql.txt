@@ -1,0 +1,32 @@
+create table car (
+   id            uuid     not null primary key,
+   car_brand     varchar  not null,
+   car_model     varchar  not null,
+   car_type      varchar  not null
+);
+
+insert into car(id, car_brand, car_model, car_type)
+values ('d4d3e7b8-7718-4fc1-aed2-480c23c69e53', 'Dacia', 'Logan', 'sedan' ),
+('a4d4e7b8-7718-4fc1-aed2-480c23c69e53', 'Dacia', 'Duster', 'suv' ),
+('b7d4e7b8-7718-4fc1-aed2-480c23c69e53', 'Toyota', 'Corrola', 'sedan' ),
+('c4d4e7b8-7718-4fc1-aed2-480c23c69e53', 'Honda', 'CR-V', 'suv' );
+
+create table car_brand (
+   id            uuid     not null primary key,
+   name          varchar  not null
+);
+
+create table car_type (
+   id            uuid     not null primary key,
+   name          varchar  not null
+);
+
+create table car (
+   id                serial   primary key,
+   name            varchar  not null,
+   car_brand_id    uuid     not null,
+   car_type_id     uuid     not null
+);
+
+delete from car_brand;
+delete from car_type;
